@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">GBP_Ejercicio1_Computo_Movil_2023-2</string>
-    <string name="tituloFormulario">Ingrese sus datos de perfil:</string>
+    <string name="tituloFormulario">CALCULA TU SIGNO ZODIACAL</string>
     <string name="Nombres">Nombre(s)</string>
     <string name="Apellidos">Apellido(s)</string>
-    <string-array name= "carreras" >
+    <string-array name="carreras">
         <item>Ingeniería Aeroespacial</item>
         <item>Ingeniería Civil</item>
         <item>Ingeniería Geomética</item>
@@ -20,4 +20,5 @@
         <item>Ingeniería Mecatrónica</item>
         <item>Ingeniería en Sistemas Biomédicos</item>
     </string-array>
+    <string name="Calcular">CALCULAR SIGNO</string>
 </resources>

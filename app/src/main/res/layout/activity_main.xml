@@ -54,9 +54,9 @@
         android:id="@+id/editTextDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Fecha de nacimiento"
         android:clickable="false"
         android:focusable="false"
+        android:hint="Fecha de nacimiento"
         android:onClick="dateClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         app:layout_constraintVertical_bias="0.341" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -103,6 +103,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.534" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="350dp"
+        android:layout_height="51dp"
+        android:onClick="resultClick"
+        android:text="@string/Calcular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
