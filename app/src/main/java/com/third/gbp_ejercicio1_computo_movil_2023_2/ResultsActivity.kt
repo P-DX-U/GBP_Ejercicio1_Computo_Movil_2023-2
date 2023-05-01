@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import java.util.Date
+import java.util.Calendar
 
 class ResultsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,23 +13,47 @@ class ResultsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_results)
 
         val bundle = intent.extras
+        val alumno: Student?
 
-        if (bundle != null) {
-            val nombre = bundle.getString("Nombre")
-            val year = bundle.getInt("year")
-            val month = bundle.getInt("month")
-            val day = bundle.getInt("day")
-            val email = bundle.getString("Email")
-            val numCuenta = bundle.getString("NumCuenta")
-            val carrera = bundle.getString("Carrera")
-            Log.d("Nombre> ", nombre.toString())
-            Log.d("Year> ", year.toString())
-            Log.d("Month> ", month.toString())
-            Log.d("Day> ", day.toString())
-            Log.d("Email> ", email.toString())
-            Log.d("Num Cuenta> ", numCuenta.toString())
-            Log.d("Carrera> ", carrera.toString())
+        alumno = bundle?.getParcelable<Student>("alumno")
 
+        Log.d("nombre: ", alumno?.nombre.toString())
+        Log.d("apellido: ", alumno?.apellidos.toString())
+        Log.d("dia: ", alumno?.day.toString())
+        Log.d("mes: ", alumno?.month.toString())
+        Log.d("ano: ", alumno?.year.toString())
+        Log.d("email: ", alumno?.email.toString())
+        Log.d("num cuenta: ", alumno?.numCuenta.toString())
+        Log.d("carrera: ", alumno?.carrera.toString())
+        if (alumno != null) {
+            calculateAge(alumno)
         }
     }
+
+    private fun calculateAge(alumno: Student) {
+        val c = Calendar.getInstance()
+        //Calculo de la fecha actual
+        val actualDays = c.get(Calendar.DAY_OF_MONTH)
+        val actualMonths = c.get(Calendar.MONTH)
+        val actualYears = c.get(Calendar.YEAR)
+
+        Log.d("Dia", actualDays.toString())
+        Log.d("Mes", actualMonths.toString())
+        Log.d("Ano", actualYears.toString())
+
+        //Obtención de la edad
+        var ageDays = actualDays - alumno.day!!.toInt()
+        var ageMonths = actualMonths - alumno.month!!.toInt()
+        var ageYears = actualYears - alumno.year!!.toInt()
+
+        var age = (ageYears*365 + ageMonths*30 + ageDays)/365
+        Log.d("Edad: ", age.toString())
+    }
+
+    private fun zodiacSign(){
+
+
+    }
+
+
 }

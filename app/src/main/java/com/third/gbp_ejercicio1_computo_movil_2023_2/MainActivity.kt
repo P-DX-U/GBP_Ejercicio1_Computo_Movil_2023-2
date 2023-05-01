@@ -4,6 +4,7 @@ import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.AdapterView
@@ -60,55 +61,86 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private fun isValidEmail(mail: CharSequence) =
         (!TextUtils.isEmpty(mail) && Patterns.EMAIL_ADDRESS.matcher(mail).matches())
 
-    private fun validacionCampos() {
+    private fun textFieldsValidation(): Boolean {
         if (binding.editTextNombre?.text.toString().isBlank()) {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Por favor escribe tu nombre.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (binding.editTextApellido?.text.toString().isBlank()) {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Por favor escribe tus apellidos.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (binding.editTextDate?.text.toString().isBlank()) {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Por favor selecciona tu fecha de nacimiento.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (binding.editTextTextEmailAddress?.text.toString().isBlank()) {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Por favor escribe tu correo electrónico.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (isValidEmail(binding.editTextTextEmailAddress.text.toString()) == false) {
             Toast.makeText(
                 this,
                 "El E-Mail proporcionado no tiene forma de dirección de correo electrónico.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (binding.editTextCuenta?.text.toString().isBlank()) {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Por favor escribe tu número de cuenta.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (binding.editTextCuenta.text.toString().length < 9) {
             Toast.makeText(
                 this,
                 "Por favor escribe tu número de cuenta de 9 dígitos.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
         } else if (carrera.toString() == "0") {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Por favor selecciona una carrera.",
                 Toast.LENGTH_LONG
             ).show()
+            return false
+        } else {
+            return true
         }
     }
+
     fun resultClick(view: View) {
-        validacionCampos()
-
+        val intent = Intent(this, ResultsActivity::class.java)
+        Log.d("textFieldValidation", textFieldsValidation().toString())
+        if(textFieldsValidation() == true){
+            val alumno = Student(
+                binding.editTextNombre.text.toString(),
+                binding.editTextApellido.text.toString(),
+                vday,
+                vmonth,
+                vyear,
+                binding.editTextTextEmailAddress.text.toString(),
+                binding.editTextCuenta.text.toString(),
+                carrera
+            )
+            val bundle = Bundle()
+            bundle.putParcelable("alumno", alumno)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
     }
-
-
 }
