@@ -3,15 +3,15 @@ package com.third.gbp_ejercicio1_computo_movil_2023_2
 import android.R
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.third.gbp_ejercicio1_computo_movil_2023_2.databinding.ActivityMainBinding
 import com.third.gbp_ejercicio1_computo_movil_2023_2.R as localR
-import java.util.*
-import kotlin.properties.Delegates
-
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var vday: Int = 0
     var vmonth: Int = 0
     var vyear: Int = 0
-    var carrera: String = " "
+    var carrera: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
@@ -51,31 +51,63 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
-        carrera = aaCarreras.getItem(position).toString()
+        carrera = position.toString()
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
     }
 
+    private fun isValidEmail(mail: CharSequence) =
+        (!TextUtils.isEmpty(mail) && Patterns.EMAIL_ADDRESS.matcher(mail).matches())
+
+    private fun validacionCampos() {
+        if (binding.editTextNombre?.text.toString().isBlank()) {
+            Toast.makeText(this,
+                "Por favor escribe tu nombre.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (binding.editTextApellido?.text.toString().isBlank()) {
+            Toast.makeText(this,
+                "Por favor escribe tus apellidos.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (binding.editTextDate?.text.toString().isBlank()) {
+            Toast.makeText(this,
+                "Por favor selecciona tu fecha de nacimiento.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (binding.editTextTextEmailAddress?.text.toString().isBlank()) {
+            Toast.makeText(this,
+                "Por favor escribe tu correo electrónico.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (isValidEmail(binding.editTextTextEmailAddress.text.toString()) == false) {
+            Toast.makeText(
+                this,
+                "El E-Mail proporcionado no tiene forma de dirección de correo electrónico.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (binding.editTextCuenta?.text.toString().isBlank()) {
+            Toast.makeText(this,
+                "Por favor escribe tu número de cuenta.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (binding.editTextCuenta.text.toString().length < 9) {
+            Toast.makeText(
+                this,
+                "Por favor escribe tu número de cuenta de 9 dígitos.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else if (carrera.toString() == "0") {
+            Toast.makeText(this,
+                "Por favor selecciona una carrera.",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
     fun resultClick(view: View) {
-        val intent = Intent(this, ResultsActivity::class.java)
+        validacionCampos()
 
-        val bundle = Bundle()
-        bundle.putString(
-            "Nombre",
-            binding.editTextNombre?.text.toString() + " " + binding.editTextApellido?.text.toString()
-        )
-        bundle.putInt("year", vyear)
-        bundle.putInt("month", vmonth)
-        bundle.putInt("day", vday)
-        bundle.putString("Email", binding.editTextTextEmailAddress?.text.toString())
-        bundle.putString("NumCuenta", binding.editTextCuenta?.text.toString())
-        bundle.putString("Carrera", carrera)
-
-        intent.putExtras(bundle)
-
-        startActivity(intent)
     }
 
 
