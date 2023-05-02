@@ -8,3 +8,5 @@ class Student(
     var nombre: String?, var apellidos: String?, var day: Int?, var month: Int?,
     var year: Int?, var email: String?, var numCuenta: String?, var carrera: String?
 ) : Parcelable
+
+
