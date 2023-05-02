@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">GBP_Ejercicio1_Computo_Movil_2023-2</string>
-    <string name="tituloFormulario">CALCULA TU SIGNO ZODIACAL</string>
+    <string name="tituloFormulario">FORMULARIO</string>
     <string name="Nombres">Nombre(s)</string>
     <string name="Apellidos">Apellido(s)</string>
+    <string name="tvfechaNacimiento">Fecha de Nacimiento</string>
+    <string name="fechaNacimiento">Fecha de nacimiento: %1$d/%2$d/%3$d</string>
+    <string name="tvemail">E-Mail</string>
+    <string name="tvNumCuenta">No. Cuenta</string>
+    <string name="solicNombre">Por favor escribe tu nombre.</string>
+    <string name="solicApellidos">Por favor escribe tus apellidos.</string>
+    <string name="solicFecha">Por favor selecciona tu fecha de nacimiento.</string>
+    <string name="solicEmail">Por favor escribe tu correo electrónico.</string>
+    <string name="checkEmail">El E-Mail proporcionado no tiene forma de dirección de correo electrónico.</string>
+    <string name="solicNumCuenta">Por favor escribe tu número de cuenta.</string>
+    <string name="checkNumCuenta">Por favor escribe tu número de cuenta de 9 dígitos.</string>
+    <string name="solicCarrera">Por favor selecciona una carrera.</string>
     <string-array name="carreras">
         <item>Seleccione una carrera:</item>
         <item>Ingeniería Aeroespacial</item>
@@ -21,5 +33,42 @@
         <item>Ingeniería Mecatrónica</item>
         <item>Ingeniería en Sistemas Biomédicos</item>
     </string-array>
-    <string name="Calcular">CALCULAR SIGNO</string>
+    <string name="calcular">CALCULAR SIGNO</string>
+    <string name="resultados">Resultados</string>
+    <string name="nombre">Nombre: </string>
+    <string name="edad">Edad: </string>
+    <string name="anyos"> años cumplidos.</string>
+    <string name="signoZod">Signo zodiacal: </string>
+    <string name="horChino">Horoscopo chino: </string>
+    <string name="email">E-mail: </string>
+    <string name="numCuenta">No. Cuenta: </string>
+    <string name="carrera">Carrera</string>
+    <string-array name="signosZodiacales">
+        <item>Aries</item>
+        <item>Tauro</item>
+        <item>Géminis</item>
+        <item>Cáncer</item>
+        <item>Leo</item>
+        <item>Virgo</item>
+        <item>Libra</item>
+        <item>Escorpio</item>
+        <item>Sagitario</item>
+        <item>Capricornio</item>
+        <item>Acuario</item>
+        <item>Piscis</item>
+    </string-array>
+    <string-array name="horoscpChino">
+        <item>Cabra</item>
+        <item>Mono</item>
+        <item>Gallo</item>
+        <item>Perro</item>
+        <item>Jabalí</item>
+        <item>Rata</item>
+        <item>Buey</item>
+        <item>Tigre</item>
+        <item>Conejo</item>
+        <item>Dragón</item>
+        <item>Serpiente</item>
+        <item>Caballo</item>
+    </string-array>
 </resources>

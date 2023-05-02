@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     fun onDateSelected(day: Int, month: Int, year: Int) {
         var month = month + 1
-        binding.editTextDate.setText("Fecha de nacimiento: $day/$month/$year")
+        binding.editTextDate.setText(getString(localR.string.fechaNacimiento, day, month, year))
 
         vday = day
         vmonth = month
@@ -65,56 +65,56 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         if (binding.editTextNombre?.text.toString().isBlank()) {
             Toast.makeText(
                 this,
-                "Por favor escribe tu nombre.",
+                localR.string.solicNombre,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (binding.editTextApellido?.text.toString().isBlank()) {
             Toast.makeText(
                 this,
-                "Por favor escribe tus apellidos.",
+                localR.string.solicApellidos,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (binding.editTextDate?.text.toString().isBlank()) {
             Toast.makeText(
                 this,
-                "Por favor selecciona tu fecha de nacimiento.",
+                localR.string.solicFecha,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (binding.editTextTextEmailAddress?.text.toString().isBlank()) {
             Toast.makeText(
                 this,
-                "Por favor escribe tu correo electrónico.",
+                localR.string.solicEmail,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (isValidEmail(binding.editTextTextEmailAddress.text.toString()) == false) {
             Toast.makeText(
                 this,
-                "El E-Mail proporcionado no tiene forma de dirección de correo electrónico.",
+                localR.string.checkEmail,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (binding.editTextCuenta?.text.toString().isBlank()) {
             Toast.makeText(
                 this,
-                "Por favor escribe tu número de cuenta.",
+                localR.string.solicNumCuenta,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (binding.editTextCuenta.text.toString().length < 9) {
             Toast.makeText(
                 this,
-                "Por favor escribe tu número de cuenta de 9 dígitos.",
+                localR.string.checkNumCuenta,
                 Toast.LENGTH_LONG
             ).show()
             return false
         } else if (carrera.toString() == "0") {
             Toast.makeText(
                 this,
-                "Por favor selecciona una carrera.",
+                localR.string.solicCarrera,
                 Toast.LENGTH_LONG
             ).show()
             return false

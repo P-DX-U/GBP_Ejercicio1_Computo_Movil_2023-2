@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GBP_Ejercicio1_Computo_Movil_2023-2</string>
+    <string name="tituloFormulario">フォーム</string>
+    <string name="Nombres">名前</string>
+    <string name="Apellidos">苗字</string>
+    <string name="tvfechaNacimiento">生年月日</string>
+    <string name="fechaNacimiento">生年月日: %3$d/%2$d/%1$d</string>
+    <string name="tvemail">E-MAIL</string>
+    <string name="tvNumCuenta">アカウント番号</string>
+    <string name="solicNombre">お名前を入力してください。</string>
+    <string name="solicApellidos">苗字を入力してください。</string>
+    <string name="solicFecha">生年月日を選択してください。</string>
+    <string name="solicEmail">あなたの電子メールを書いてください。</string>
+    <string name="checkEmail">メールアドレスを確認してください。</string>
+    <string name="solicNumCuenta">アカウント番号を入力してください。</string>
+    <string name="checkNumCuenta">9桁のアカウント番号を入力してください。</string>
+    <string name="solicCarrera">職業を選択してください。</string>
+    <string-array name="carreras">
+        <item>職業を選択してください:</item>
+        <item>エアロスペース・エンジニアリング</item>
+        <item>土木工学</item>
+        <item>測地学者</item>
+        <item>環境工学</item>
+        <item>物理探査</item>
+        <item>地質工学</item>
+        <item>石油工学</item>
+        <item>鉱山学</item>
+        <item>計算機工学</item>
+        <item>電気電子工学</item>
+        <item>通信工学</item>
+        <item>機械工学</item>
+        <item>インダストリアル・エンジニアリング</item>
+        <item>メカトロニクス</item>
+        <item>医用生体工学</item>
+    </string-array>
+    <string name="calcular">計算する</string>
+    <string name="resultados">結果</string>
+    <string name="nombre">名前: </string>
+    <string name="edad"> </string>
+    <string name="anyos"> 歳.</string>
+    <string name="signoZod">アストロロジカル・サイン: </string>
+    <string name="horChino">十二辰: </string>
+    <string name="email">E-MAIL: </string>
+    <string name="numCuenta">アカウント番号: </string>
+    <string name="carrera">工学</string>
+    <string-array name="signosZodiacales">
+        <item>白羊</item>
+        <item>金牛</item>
+        <item>双児</item>
+        <item>巨蟹</item>
+        <item>獅子</item>
+        <item>処女</item>
+        <item>天秤</item>
+        <item>天蝎</item>
+        <item>人馬</item>
+        <item>磨羯</item>
+        <item>宝瓶</item>
+        <item>双魚</item>
+    </string-array>
+    <string-array name="horoscpChino">
+        <item>未</item>
+        <item>申</item>
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+    </string-array>
+</resources>
