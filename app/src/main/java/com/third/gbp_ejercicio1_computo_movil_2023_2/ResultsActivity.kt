@@ -1,6 +1,5 @@
 package com.third.gbp_ejercicio1_computo_movil_2023_2
 
-import android.icu.util.ChineseCalendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,6 +35,7 @@ class ResultsActivity : AppCompatActivity() {
             calculateAge(alumno)
             zodiacSign(alumno)
             chineseSign(alumno)
+            career(alumno)
         }
     }
 
@@ -134,6 +134,73 @@ class ResultsActivity : AppCompatActivity() {
                 } else {
                     birthYear -= 12
                 }
+            }
+        }
+    }
+
+    private fun career(alumno: Student){
+        val carrera = alumno.carrera?.toInt()
+        val carreras = resources.getStringArray(R.array.carreras)
+        when (carrera) {
+            1 -> {
+                binding.tvCarrera.text = carreras[1]
+                binding.imageViewCarrera.setImageResource(R.drawable.aeroespacial)
+            }
+            2 -> {
+                binding.tvCarrera.text = carreras[2]
+                binding.imageViewCarrera.setImageResource(R.drawable.civil)
+            }
+            3 -> {
+                binding.tvCarrera.text = carreras[3]
+                binding.imageViewCarrera.setImageResource(R.drawable.geomatica)
+            }
+            4 -> {
+                binding.tvCarrera.text = carreras[4]
+                binding.imageViewCarrera.setImageResource(R.drawable.ambiental)
+            }
+            5 -> {
+                binding.tvCarrera.text = carreras[5]
+                binding.imageViewCarrera.setImageResource(R.drawable.geofisica)
+            }
+            6 -> {
+                binding.tvCarrera.text = carreras[6]
+                binding.imageViewCarrera.setImageResource(R.drawable.geologica)
+            }
+            7 -> {
+                binding.tvCarrera.text = carreras[7]
+                binding.imageViewCarrera.setImageResource(R.drawable.petrolera)
+            }
+            8 -> {
+                binding.tvCarrera.text = carreras[8]
+                binding.imageViewCarrera.setImageResource(R.drawable.minas)
+            }
+            9 -> {
+                binding.tvCarrera.text = carreras[9]
+                binding.imageViewCarrera.setImageResource(R.drawable.computacion)
+            }
+            10 -> {
+                binding.tvCarrera.text = carreras[10]
+                binding.imageViewCarrera.setImageResource(R.drawable.electrica)
+            }
+            11 -> {
+                binding.tvCarrera.text = carreras[11]
+                binding.imageViewCarrera.setImageResource(R.drawable.telecom)
+            }
+            12 -> {
+                binding.tvCarrera.text = carreras[12]
+                binding.imageViewCarrera.setImageResource(R.drawable.mecanica)
+            }
+            13 -> {
+                binding.tvCarrera.text = carreras[13]
+                binding.imageViewCarrera.setImageResource(R.drawable.industrial)
+            }
+            14 -> {
+                binding.tvCarrera.text = carreras[14]
+                binding.imageViewCarrera.setImageResource(R.drawable.mecanica)
+            }
+            15 -> {
+                binding.tvCarrera.text = carreras[15]
+                binding.imageViewCarrera.setImageResource(R.drawable.biomedicos)
             }
         }
     }
