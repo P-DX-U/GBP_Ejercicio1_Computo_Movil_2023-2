@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GBP_Ejercicio1_Computo_Movil_2023-2</string>
+    <string name="tituloSplash">Ejercicio 1 Cómputo Móvil</string>
     <string name="tituloFormulario">フォーム</string>
     <string name="Nombres">名前</string>
     <string name="Apellidos">苗字</string>
@@ -72,4 +73,6 @@
         <item>巳</item>
         <item>午</item>
     </string-array>
+    <string name="version">バージョン 1.0</string>
+    <string name="autor">パブロさんによる</string>
 </resources>
